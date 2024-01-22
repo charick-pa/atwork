@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript Calculator | Web Dev Trick</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<script>
+        function calcNumbers(result) {
+			var displayResult = form.displayResult;
+
+			if (result === '=') {
+				// Evaluate and display the result
+				var expressionResult = eval(displayResult.value);
+				displayResult.value += " = " + expressionResult;
+			} else if (result === 'C') {
+				// Clear the display
+				displayResult.value = '';
+			} else if (result === 'Backspace') {
+				// Remove the last character
+				displayResult.value = displayResult.value.slice(0, -1);
+			} else {
+				// Append the clicked button's value to the display
+				displayResult.value += result;
+			}
+
+			// Check if the content is full
+			var isFullContent = displayResult.value.length >= 8; // You can adjust the threshold
+
+			if (isFullContent) {
+				document.querySelector('.display').classList.add('half-height');
+				displayResult.style.fontSize = '5px';
+			} else {
+				document.querySelector('.display').classList.remove('half-height');
+				displayResult.style.fontSize = ''; // Revert to the default font size
+			}
+		}
+
+    </script>
+    <div class="container">
+        <form name="form">
+            <div class="display half-height">
+                <input type="text" placeholder="0" name="displayResult" />
+            </div>
+            <div class="buttons">
+                <div class="row">
+                    <input type="button" name="b7" value="7" onclick="calcNumbers(b7.value)">
+                    <input type="button" name="b8" value="8" onclick="calcNumbers(b8.value)">
+                    <input type="button" name="b9" value="9" onclick="calcNumbers(b9.value)">
+                    <input type="button" name="addb" value="+" onclick="calcNumbers(addb.value)">
+                </div>
+                
+                <div class="row">
+                    <input type="button" name="b4" value="4" onclick="calcNumbers(b4.value)">
+                    <input type="button" name="b5" value="5" onclick="calcNumbers(b5.value)">
+                    <input type="button" name="b6" value="6" onclick="calcNumbers(b6.value)">
+                    <input type="button" name="subb" value="-" onclick="calcNumbers(subb.value)">
+                </div>
+                
+                <div class="row">
+                    <input type="button" name="b1" value="1" onclick="calcNumbers(b1.value)">
+                    <input type="button" name="b2" value="2" onclick="calcNumbers(b2.value)">
+                    <input type="button" name="b3" value="3" onclick="calcNumbers(b3.value)">
+                    <input type="button" name="mulb" value="*" onclick="calcNumbers(mulb.value)">
+                </div>
+                
+                <div class="row">
+                    <input type="button" name="b0" value="0" onclick="calcNumbers(b0.value)">
+                    <input type="button" name="potb" value="." onclick="calcNumbers(potb.value)">
+                    <input type="button" name="divb" value="/" onclick="calcNumbers(divb.value)">
+                    <input type="button" class="red" value="=" onclick="calcNumbers('=')">
+                </div>
+				<div class="row">
+                    <input type="button" name="clear" value="C" onclick="calcNumbers('C')">
+					<input class="backspace" type="button" name="Backspace" value="BACK" onclick="calcNumbers('Backspace')">
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
