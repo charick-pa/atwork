@@ -1,6 +1,7 @@
 <?php
   //include 'components/connection.php'; 
 ?>
+ <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <!-- Include the CSS file -->
   <style type="text/css">
         <?php include 'style.css'; ?>
@@ -15,8 +16,8 @@
     <title>Green Coffee - home page</title>
 </head>
 <body>
-    <?php include 'login.php'; ?>
     <?php include 'components/header.php'; ?>
+    <?php //include 'components/navbar.php'; ?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     <script src="script.js"></script>
     <?php //include 'components/alert.php'; ?> 
