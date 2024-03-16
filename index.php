@@ -17,7 +17,7 @@
 </head>
 <body>
     <?php include 'components/header.php'; ?>
-    <?php //include 'components/navbar.php'; ?>
+    <?php include 'login.php'; ?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     <script src="script.js"></script>
     <?php //include 'components/alert.php'; ?> 

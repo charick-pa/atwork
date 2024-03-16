@@ -13,7 +13,7 @@
 </style>
 
 <?php //include 'components/header.php'; ?>
-<?php include 'components/notification.php'; ?>
+<?php include 'components/body-1.php'; ?>
     
 </body>
 </html>
